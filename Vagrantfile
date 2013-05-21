@@ -102,9 +102,9 @@ Vagrant.configure("2") do |config|
 		chef.validation_key_path = "/Users/hlin/Development/chef/.chef/hlin-validator.pem"
 		chef.client_key_path = "/Users/hlin/Development/chef/.chef/hai.pem"
  		 
-		chef.log_level = :debug
+		chef.log_level = :info
 
-		chef.run_list = ["recipe[apt]", "recipe[vim]"]
+		chef.run_list = ["recipe[apt]", "recipe[vim]", "recipe[zsh]", "recipe[git]"]
 		
 	end
   #
