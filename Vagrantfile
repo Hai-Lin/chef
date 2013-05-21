@@ -1,7 +1,10 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
+user = ENV['OPSCODE_USER'] || ENV['USER']
+home_dir = ENV['HOME']
 
-Vagrant.configure("2") do |config|
+
+Vagrant::Config.run do |config|
   # All Vagrant configuration is done here. The most common configuration
   # options are documented and commented below. For a complete reference,
   # please see the online documentation at vagrantup.com.
@@ -97,14 +100,20 @@ Vagrant.configure("2") do |config|
   # validation key to validation.pem.
   #
 	config.vm.provision :chef_client do |chef|
+		#	Define keys
 		chef.chef_server_url = "https://api.opscode.com/organizations/hlin"
 		chef.validation_client_name = "hlin-validator"
-		chef.validation_key_path = "/Users/hlin/Development/chef/.chef/hlin-validator.pem"
-		chef.client_key_path = "/Users/hlin/Development/chef/.chef/hai.pem"
+		chef.validation_key_path = "#{home_dir}/Development/chef/.chef/hlin-validator.pem"
+		chef.client_key_path = "#{home_dir}/Development/chef/.chef/hai.pem"
+		# Change the node/client name for the Chef Server 
+		# Remember to change the name when you want to start a new client
+		chef.node_name = "dev-vagrant-#{user}"
  		 
+		# Log level
 		chef.log_level = :info
 
-		chef.run_list = ["recipe[apt]", "recipe[vim]", "recipe[zsh]", "recipe[git]"]
+		# Run list
+		chef.run_list = ["role[dev_basic]"]
 		
 	end
   #
