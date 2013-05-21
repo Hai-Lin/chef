@@ -96,10 +96,17 @@ Vagrant.configure("2") do |config|
   # HTTP instead of HTTPS depending on your configuration. Also change the
   # validation key to validation.pem.
   #
-  # config.vm.provision :chef_client do |chef|
-  #   chef.chef_server_url = "https://api.opscode.com/organizations/ORGNAME"
-  #   chef.validation_key_path = "ORGNAME-validator.pem"
-  # end
+	config.vm.provision :chef_client do |chef|
+		chef.chef_server_url = "https://api.opscode.com/organizations/hlin"
+		chef.validation_client_name = "hlin-validator"
+		chef.validation_key_path = "/Users/hlin/Development/chef/.chef/hlin-validator.pem"
+		chef.client_key_path = "/Users/hlin/Development/chef/.chef/hai.pem"
+ 		 
+		chef.log_level = :debug
+
+		chef.run_list = ["recipe[apt]", "recipe[vim]"]
+		
+	end
   #
   # If you're using the Opscode platform, your validator client is
   # ORGNAME-validator, replacing ORGNAME with your organization name.
