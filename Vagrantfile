@@ -114,6 +114,10 @@ Vagrant::Config.run do |config|
 
 		# Run list
 		chef.run_list = ["role[dev_basic]"]
+
+		chef.json = {
+			:users => ["hlin"]
+    }
 		
 		
 	end
