@@ -115,6 +115,7 @@ Vagrant::Config.run do |config|
 		# Run list
 		chef.run_list = ["role[dev_basic]"]
 		
+		
 	end
   #
   # If you're using the Opscode platform, your validator client is
