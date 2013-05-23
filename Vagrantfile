@@ -119,7 +119,6 @@ Vagrant::Config.run do |config|
 			:users => ["hlin"]
     }
 		
-		
 	end
   #
   # If you're using the Opscode platform, your validator client is
