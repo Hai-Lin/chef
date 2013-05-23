@@ -1,0 +1,3 @@
+[submodule "cookbooks/user"]
+	path = cookbooks/user
+	url = git://github.com/fnichol/chef-user.git
