@@ -113,7 +113,7 @@ Vagrant::Config.run do |config|
 		chef.log_level = :info
 
 		# Run list
-		chef.run_list = ["role[dev_basic]", "role[meteor]"]
+		chef.run_list = ["role[dev_basic]", "role[Data_science]"]
 
 		chef.json = {
 			:users => ["hlin"]
