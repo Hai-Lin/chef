@@ -12,6 +12,7 @@ Vagrant::Config.run do |config|
   # Every Vagrant virtual environment requires a box to build off of.
   config.vm.box = "precise64"
 
+
   # The url from where the 'config.vm.box' box will be fetched if it
   # doesn't already exist on the user's system.
   # config.vm.box_url = "http://domain.com/path/to/above.box"
@@ -99,27 +100,6 @@ Vagrant::Config.run do |config|
   # HTTP instead of HTTPS depending on your configuration. Also change the
   # validation key to validation.pem.
   #
-	config.vm.provision :chef_client do |chef|
-		#	Define keys
-		chef.chef_server_url = "https://api.opscode.com/organizations/hlin"
-		chef.validation_client_name = "hlin-validator"
-		chef.validation_key_path = "#{home_dir}/Development/chef/.chef/hlin-validator.pem"
-		chef.client_key_path = "#{home_dir}/Development/chef/.chef/hai.pem"
-		# Change the node/client name for the Chef Server 
-		# Remember to change the name when you want to start a new client
-		chef.node_name = "dev-vagrant-#{user}"
- 		 
-		# Log level
-		chef.log_level = :info
-
-		# Run list
-		chef.run_list = ["role[dev_basic]", "role[Data_science]"]
-
-		chef.json = {
-			:users => ["hlin"]
-    }
-		
-	end
   #
   # If you're using the Opscode platform, your validator client is
   # ORGNAME-validator, replacing ORGNAME with your organization name.
