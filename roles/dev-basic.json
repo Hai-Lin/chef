@@ -1,0 +1,37 @@
+{
+  "name": "dev_basic",
+  "description": "Basic requirement for development",
+  "json_class": "Chef::Role",
+  "default_attributes": {
+  },
+  "override_attributes": {
+  },
+  "chef_type": "role",
+  "run_list": [
+    "recipe[apt]",
+    "recipe[build-essential]",
+    "recipe[git]",
+    "recipe[zsh]",
+    "recipe[vim]",
+    "recipe[user::data_bag]",
+    "recipe[oh-my-zsh]",
+    "recipe[ack]",
+    "recipe[curl]",
+    "recipe[tmux]",
+    "recipe[rvm::user]",
+    "recipe[rvm::user_install]",
+    "recipe[homesick::data_bag]",
+    "recipe[nodejs]",
+    "recipe[janus]"
+  ],
+  "env_run_lists": {
+    "Developement": [
+      "recipe[apt]",
+      "recipe[build-essential]",
+      "recipe[git]",
+      "recipe[vim]",
+      "recipe[ack]",
+      "recipe[zsh]"
+    ]
+  }
+}
