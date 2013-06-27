@@ -1,0 +1,22 @@
+
+{
+  "name": "data_bag_item_users_hlin",
+  "json_class": "Chef::DataBagItem",
+  "chef_type": "data_bag_item",
+  "data_bag": "users",
+  "raw_data": {
+    "ssh_keys": [
+      "ssh-dss AAAAB3NzaC1kc3MAAACBALDw2WXVWAVDCi2NvslhlgPmYoJPkrYoqCe1DeC42fLTHMNUdrnw5wOgsshtxNP9NOBlfAt9a7osWVV2NTWKdSIQbfJAD7SGpuxzlkH9Ot95dM+HXuk2xvJ9fq0NHDDafRhgRf9HuZTMvTqJgF7r3N/SzV26c2LsVGmmjQNglUdxAAAAFQDyowOmD/EolaHG/I7e1ROzx/DRlQAAAIA/gdt5Vcud+KlaxY0H0//dLfCrEwXPyy/KGLxuQ05JG5A4jF4eG64l8Uogn5bIZ8Jcqw8hnrnAkVCvQ9M8y3fWe+u44y9ZizTL7xTrdz6fkVPMoFLgXNAqih9n3msLFhEcvC54+ng1+0SgxnrysyQHvPQWT9O0QSeSLsBxge8WygAAAIEAhahysOXbUPPmhrKjzlk7N43kmAj73F7YbAvXnlUkyWp2cW9is820i3k9r9HsV+TijGauW8Wt1T9h0bG2spjIJQvh8G+kBdVUqeXYgFebMFOKnPhcFlWYOJKga+WVBep3D3aZtRWwYUNSgbzCuo5LlFJRyQ2Yuwki88QFa8s7+DA= hlin@precise64-2013-05-24T17:51:25+0000"
+    ],
+    "homesick_castles": [
+      {
+        "name": "dotfiles",
+        "source": "https://github.com/Hai-Lin/dotfiles.git"
+      }
+    ],
+    "id": "hlin",
+    "shell": "/bin/zsh",
+    "home": "/home/hlin",
+    "email": "hai.lin.cs@gmail.com"
+  }
+}
