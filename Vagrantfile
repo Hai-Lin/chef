@@ -104,14 +104,14 @@ Vagrant::Config.run do |config|
 		#	Define keys
 		chef.chef_server_url = "https://api.opscode.com/organizations/hlin"
 		chef.validation_client_name = "hlin-validator"
-		chef.validation_key_path = "#{home_dir}/Development/chef/.chef/hlin-validator.pem"
-		chef.client_key_path = "#{home_dir}/Development/chef/.chef/hai.pem"
+		chef.validation_key_path = "#{home_dir}/Development/credentials/chef/hlin-validator.pem"
+		chef.client_key_path = "#{home_dir}/Development/credentials/chef/hai.pem"
 		# Change the node/client name for the Chef Server 
 		# Remember to change the name when you want to start a new client
 		chef.node_name = "dev-vagrant-#{user}"
  		 
 		# Log level
-		chef.log_level = :info
+		chef.log_level = :debug
 
 		# Run list
 		chef.run_list = ["role[dev_basic]"]
